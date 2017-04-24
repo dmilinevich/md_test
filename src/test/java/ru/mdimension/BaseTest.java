@@ -13,14 +13,13 @@ import ru.mdimension.dto.Translate;
 public class BaseTest {
 
 	@Autowired
-	private TranslateService translateService;
+	private TranslateService translateService = new TranslateService();
 
 	@Test
 	public void test1() {
 		Response response = translateService.translate("Home","en-ru");
-
-		Translate translate = response.getBody().as(Translate.class);
+        Translate translate = response.getBody().as(Translate.class);
 		Assert.assertTrue(translate.getText().size()==1, "Wrong number of words");
-		Assert.assertEquals(translate.getText().get(0), "Р”РѕРјР°", "Incorrect translation");
+		Assert.assertEquals(translate.getText().get(0), "Дома", "Incorrect translation");
 	}
 }
