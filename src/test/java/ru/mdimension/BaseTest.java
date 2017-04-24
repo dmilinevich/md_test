@@ -16,7 +16,7 @@ public class BaseTest {
 	private TranslateService translateService = new TranslateService();
 
 	@Test
-	public void test1() {
+	public void Yandex_trans() {
 		Response response = translateService.translate("Home","en-ru");
         Translate translate = response.getBody().as(Translate.class);
 		Assert.assertTrue(translate.getText().size()==1, "Wrong number of words");
