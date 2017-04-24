@@ -16,10 +16,10 @@ public class GoogleTest {
 
         Translation translation =
                 translate.translate(
-                        "Home",
+                        "The home",
                         TranslateOption.sourceLanguage("en"),
                         TranslateOption.targetLanguage("ru"));
 
-        Assert.assertEquals(translation.getTranslatedText(), "Дома", "Incorrect translation");
+        Assert.assertEquals(translation.getTranslatedText(), "Дом", "Incorrect translation");
     }
 }
